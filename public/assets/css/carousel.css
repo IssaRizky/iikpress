@@ -1,0 +1,206 @@
+/* page styles */
+.ax-hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* carousel styles */
+.carouse {
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-left: -5%;
+  --carousel-height: 550px;
+  --carousel-width: 1400px;
+  --carousel-item-height: 270px;
+  --carousel-item-width: 170px;
+
+  width: 100%;
+}
+
+.carouse-container {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  min-height: var(--carousel-height);
+  margin: 0 auto;
+  max-width: var(--carousel-width);
+  position: relative;
+}
+
+.carouse-item {
+  height: var(--carousel-item-height);
+  border-radius: 15px;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  width: var(--carousel-item-width);
+  z-index: 0;
+}
+
+.carouse-item-1 {
+  left: 15%;
+  opacity: 0;
+}
+
+.carouse-item-2,
+.carouse-item-4 {
+  height: calc(var(--carousel-item-height) * 1.5);
+  opacity: 1;
+  width: calc(var(--carousel-item-width) * 1.5);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.carouse-item-2 {
+  left: 30%;
+}
+
+.carouse-item-3 {
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  height: calc(var(--carousel-item-height) * 2);
+  opacity: 1;
+  left: 50%;
+  width: calc(var(--carousel-item-width) * 2);
+  z-index: 2;
+}
+
+.carouse-item-4 {
+  left: 70%;
+}
+
+.carouse-item-5 {
+  left: 85%;
+  opacity: 0;
+}
+
+.carouse-controls {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* carousel button styles */
+.carouse-control {
+  background-color: rgb(42, 74, 42);
+  border: 2px solid;
+  border-color: transparent;
+  border-radius: 100%;
+  color: #ffffff;
+  cursor: pointer;
+  height: 22px;
+  margin: 0 50px;
+  position: relative;
+  /* position: absolute; */
+  transform: scale(1.5);
+  transition: transform 0.5s ease-out;
+  width: 22px;
+}
+
+.carouse-control:hover {
+  transform: scale(1.3);
+}
+
+/* previous button */
+.carouse-control-previous::after,
+.carouse-control-previous::before {
+  box-sizing: border-box;
+  content: "";
+  /* content: "\2190"; */
+  display: block;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+  background-image: url("../img/iik/asset\ iik\ press-14.png");
+}
+.carouse-control-previous::before {
+  background: currentColor;
+  border-radius: 2px;
+  right: 11px;
+  width: 2px;
+}
+.carouse-control-previous::after {
+  border-bottom: 4px solid transparent;
+  border-right: 5px solid;
+  border-top: 4px solid transparent;
+  right: 5px;
+  width: 0;
+}
+
+/* next button */
+.carouse-control-next::after,
+.carouse-control-next::before {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 8px;
+  position: absolute;
+  top: 5px;
+}
+.carouse-control-next::before {
+  background: currentColor;
+  border-radius: 2px;
+  left: 11px;
+  width: 2px;
+}
+.carouse-control-next::after {
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid;
+  border-top: 4px solid transparent;
+  left: 5px;
+  width: 0;
+}
+
+/* play button */
+.carouse-control-play::before {
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+  border-top: 5px solid transparent;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 10px;
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 0;
+}
+
+/* pause button */
+.carouse-control-play.playing::before {
+  border-bottom: 0;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-top: 0;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 6px;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 6px;
+}
+
+/* add button */
+.carouse-control-add::after,
+.carouse-control-add::before {
+  background: currentColor;
+  border-radius: 5px;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 10px;
+}
+.carouse-control-add::after {
+  height: 10px;
+  left: 8px;
+  top: 4px;
+  width: 2px;
+}
